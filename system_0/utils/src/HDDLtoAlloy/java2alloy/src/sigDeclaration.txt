@@ -1,0 +1,37 @@
+some abstract sig Robot {
+	contributes : some Capability
+} 
+fact { all r:Robot | disj[r.contributes, (Robot-r).contributes]} // Robot capabilities do not overlap
+
+some abstract sig Capability {
+	canrun: some Task,
+	belongsto: one Robot
+}
+fact { all c:Capability, r:Robot | r in c.belongsto <=> c in r.contributes } 
+
+some abstract sig Location {}
+
+some abstract sig Task {
+	runby: one Capability
+} 
+fact { all t:Task, c:Capability | t.runby = c => t in c.canrun} // All tasks are run by a capability able to run it
+
+some abstract sig CompositeTask {
+	tasks: some Task,
+	location: one Location
+}
+fact { 
+	all ct:CompositeTask | disj[ct.tasks, (CompositeTask-ct).tasks] // Tasks belong only to a single composite task
+}
+
+abstract sig JointCompositeTask extends CompositeTask {
+}
+
+fact { all jct:JointCompositeTask | all t:jct.tasks, t':jct.tasks-t | disj[t.runby, t'.runby] }
+
+fact {
+	Location in CompositeTask.location // All locations have some composite task running in it
+	Task in Capability.canrun // All tasks are covered by some robot capability
+	Task in CompositeTask.tasks // All tasks are part of a composite task
+	Capability in Robot.contributes // All capabilities belong to some robot
+}
