@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+
+<augmentedXML builddate="2015-02-22 18:21 EST">
+   <!--Robots database-->
+   <robot>
+      <alloy name="CleanerRobot"/>
+      <initPos name="c3"/>
+      <capability name="Cleaning0" task="CLEAN">
+            <compositeTask name="cleanRoom" location="RoomA"/>
+      </capability>
+      <capability name="Cleaning1" task="CLEAN">
+            <compositeTask name="cleanRoom" location="RoomA"/>
+      </capability>
+   </robot>
+   <robot>
+      <alloy name="MedRobot"/>
+      <initPos name="c1"/>
+      <capability name="MeasuringTemp" task="TEMP">
+             <compositeTask="cleanRoom" location="RoomB"/>
+      </capability>
+      <capability name="MeasuringPressure" task="PRESURRE">
+             <compositeTask="vitalParamGoal" location="RoomB"/>
+      </capability>
+   </robot>
+   <robot>
+      <alloy name="MoveRobot1"/>
+      <initPos name="c2"/>
+      <capability name="MovingFurniture0" task="MOVEF0">
+            <joinTask="moveFurnitureGoal" location="RoomA"/>
+      </capability>
+   </robot>
+   <robot>
+      <alloy name="MoveRobot0"/>
+      <initPos name="c4"/>
+      <capability name="MovingFurniture1" task="MOVEF1">
+            <joinTask="moveFurnitureGoal" location="RoomA"/>
+      </capability>
+   </robot>
+
+</augmentedXML>
