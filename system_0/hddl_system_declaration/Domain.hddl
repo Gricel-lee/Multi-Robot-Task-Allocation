@@ -1,0 +1,77 @@
+(define (domain hospital)
+	(:types location robot capability)
+	(:predicates
+		(at ?r - robot ?l - location)
+		(hascapability ?r - robot ?c - capability)
+		(medicalrobot ?r)
+		(cleanerrobot ?r)
+	)
+	(:functions
+		(calc-time-m ?r - robot ?l1 ?l2 - location)
+	)
+	(:rewards time)
+
+	(:task VitalParameter :parameters (?r - robot ?c1 ?c2 - capability ?rloc ?dloc - location))
+	(:task CleanRoom :parameters (?r1 ?r2 - robot ?l - location))
+
+	(:method vital-parameter-m
+		:parameters (?r - robot ?c1 ?c2 - capability ?rloc ?dloc - location)
+		:task (VitalParameter ?r ?c1 ?c2 ?rloc ?dloc)
+		:precondition(
+			(medicalrobot ?r)
+		)
+		:ordered-subtasks(and
+			(move ?r ?rloc ?dloc)
+			(measuring-temperature ?r ?c1 ?dloc)
+			(measuring-bloodpressure ?r ?c2 ?dloc)
+		)
+	)
+
+	(:method clean-room-m
+		:parameters (?r1 ?r2 - robot ?l - location)
+		:task (CleanRoom ?r1 ?r2 ?l)
+		:precondition(
+			(cleanerrobot ?r)
+		)
+		:ordered-subtasks(and
+			(cleaning ?r1 ?r2 ?l)
+		)
+	)
+
+	(:action measuring-temperature
+		:parameters (?r - robot ?c1 - capability ?l - location)
+		:precondition (and 
+			(hascapability ?r ?c)
+			(at ?r ?l))
+		:effect ()
+		:reliability (rtemp)
+	)
+
+	(:action measuring-bloodpressure
+		:parameters (?r - robot ?c - capability)
+		:precondition (and 
+			(hascapability ?r ?c)
+			(at ?r ?l))
+		:effect ()
+		:reliability (rblood)
+	)
+
+	(:action cleaning
+		:parameters (?r1 ?r2 - robot ?l - location)
+		:precondition (and 
+			(at ?r1 ?l)
+			(at ?r2 ?l))
+		:effect ()
+		:reliability (rclean)
+	)
+
+	(:action move
+		:parameters (?r - robot ?l1 ?l2 - location)
+		:precondition (at ?r ?l1)
+		:effect (and
+			(not (at ?r ?l1))
+			(at ?r ?l2)
+			(rewardchange increase (time) (calc-time ?r ?l1 ?l2)))
+		:reliability (relMove)
+	)
+)

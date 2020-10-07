@@ -1,0 +1,45 @@
+(define (problem VisitRoom-r1)
+	(:domain hospital)
+	(:objects
+		r1 - robot
+		r2 - robot
+		r3 - robot
+		r4 - robot
+		r1loc - location
+		r2loc - location
+		r3loc - location
+		r4loc - location
+		c1 - location
+		c2 - location
+		c3 - location
+		c4 - location
+		measuring-temperature - capability
+		measuring-pressure - capability
+		cleaning - capability
+	)
+	(:htn
+		:tasks (and
+			(VitalParameter r1 measuring-temperature measuring-pressure r1loc c1)
+			(VitalParameter r2 measuring-temperature measuring-pressure r2loc c2))
+	)
+	(:init
+		(at r1 c1)
+		(at r2 c2)
+		(at r3 c3)
+		(at r4 c4)
+		(= (calc-time r1 r1loc c1) 40)
+		(= (calc-time r2 r2loc c2) 30)
+		(hascapability r1 measuring-temperature)
+		(hascapability r1 measuring-pressure)
+		(hascapability r2 measuring-temperature)
+		(hascapability r2 measuring-pressure)
+		(hascapability r3 cleaning)
+		(hascapability r4 cleaning)
+		(medicalrobot r1)
+		(medicalrobot r2)
+		(cleanerrobot r3)
+		(cleanerrobot r4)
+		(= 0.9 relMove)
+		(= 0.95 rclean)
+	)
+)
