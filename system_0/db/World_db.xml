@@ -1,0 +1,105 @@
+<!--COMMENT:
+This info is taken from the DSL
+The assignation of the cell is related to the physical world (image of the hospital in this case)
+alloy_to_cell_reference:
+	<alloy name="RoomA"/>	cell5
+	<taskToDo name="vitalParamGoal">
+	<alloy name="RoomB"/>	cell9
+	<taskToDo name="cleanRoom">	
+	<alloy name="RoomC"/>	cell13
+	<taskToDo name="cleanRoom">
+	<alloy name="RoomD"/>	cell17
+	<taskToDo name="cleanRoom">
+	<alloy name="RoomE"/>	cell8
+	<taskToDo name="moveObject">
+-->
+
+<locations_db>
+    <location>
+	<grid cell="c1"/>
+    </location>
+    <location>
+            <grid cell="c0"/>
+    </location>
+    <location>
+            <grid cell="c1"/>
+    </location>
+    <location>
+            <grid cell="c2"/>
+    </location>
+    <location>
+            <grid cell="c3"/>
+    </location>
+    <location>
+            <grid cell="c4"/>
+    </location>
+    <location>
+            <grid cell="c5"/>
+	    <alloy name="RoomA"/>
+	    <taskToDo name="vitalParamGoal"/>
+
+    </location>
+    <location>
+            <grid cell="c6"/>
+    </location>
+    <location>
+            <grid cell="c7"/>
+    </location>
+    <location>
+            <grid cell="c8"/>
+	    <alloy name="RoomE"/>
+	    <taskToDo name="moveObject">
+    </location>
+    <location>
+            <grid cell="c9"/>
+	    <alloy name="RoomB"/>
+	    <taskToDo name="cleanRoom"/>
+    </location>
+    <location>
+            <grid cell="c10"/>
+    </location>
+    <location>
+            <grid cell="c11"/>
+    </location>
+    <location>
+            <grid cell="c12"/>
+    </location>
+    <location>
+            <grid cell="c13"/>
+	    <alloy name="RoomC"/>
+	    <taskToDo name="cleanRoom">
+    </location>
+    <location>
+            <grid cell="c14"/>
+    </location>
+    <location>
+            <grid cell="c15"/>
+    </location>
+    <location>
+            <grid cell="c16"/>
+    </location>
+    <location>
+            <grid cell="c17"/>
+	    <alloy name="RoomD"/>
+	    <taskToDo name="cleanRoom">
+    </location>
+    <location>
+            <grid cell="c18"/>
+    </location>
+    <location>
+            <grid cell="c19"/>
+    </location>
+    <location>
+            <grid cell="c20"/>
+    </location>
+    <location>
+            <grid cell="c21"/>
+    </location>
+    <location>
+            <grid cell="c22"/>
+    </location>
+    <location>
+            <grid cell="c23"/>
+    </location>
+
+</locations_db>

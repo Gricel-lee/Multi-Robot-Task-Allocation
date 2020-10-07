@@ -1,0 +1,34 @@
+<robots_db>
+	<robot>
+		<Alloy_robot name="MedRobot$0"/>
+		<initPos cell="c1"/>
+		<DSL_robot type="MedRobot"/>
+	</robot>
+	<robot>
+		<Alloy_robot name="MedRobot$1"/>
+		<initPos cell="c2"/>
+		<DSL_robot type="MedRobot"/>
+	</robot>
+	<robot>
+		<Alloy_robot name="CleanerRobot$0"/>
+		<initPos cell="c3"/>
+		<DSL_robot type="CleanerRobot"/>
+	</robot>
+	<robot>
+		<Alloy_robot name="CleanerRobot$1"/>
+		<initPos cell="c4"/>
+		<DSL_robot type="CleanerRobot"/>
+	</robot>
+	<robot>
+		<Alloy_robot name="?"/>
+		<initPos cell="c22"/>
+		<DSL_robot type="MoveRobot"/>
+	</robot>
+	<robot>
+		<Alloy_robot name="?"/>
+		<initPos cell="c23"/>
+		<DSL_robot type="MoveRobot"/>
+	</robot>
+
+
+</robots_db>
