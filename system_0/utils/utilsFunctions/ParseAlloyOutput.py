@@ -1,3 +1,8 @@
+#*******UPDATE 07/10/2020 This file is no longer useful as the Alloy output is in JSON format
+#*******TODO: CHANGE ALL CODE HERE TO JSON alloy output************
+
+
+
 '''
 Description: This file requires the Alloy output file in "alloyXMLFile" and the  robots database db.Robots_db.xml
 Author: Gricel Vazquez
@@ -7,16 +12,16 @@ Last update: 23/09/2020
 
 import xml.etree.ElementTree as ET
 from xml.etree.ElementTree import Element, SubElement, Comment, XML
-from printXMLprettify import print_xml_prettify
+from prettify import print_xml_prettify
 import os
 from Robots_db import get_robot_initPos
 from xml.dom import minidom
 
 '''Write new XML to'''
-robotsXMLFile= os.path.abspath("C:\\Users\\grist\\eclipse-workspace\\SampleV2-MultiRobot-Task-Allocation\\system_0\\db\\dbgenerated\\Robots.xml")
+robotsXMLFile= os.path.abspath("C:\\Users\\grist\\eclipse-workspace\\Sample-Multi-Robot-Alloy\\src\\db\\Robots\\Robots.xml")
 
 '''Read Alloy XML'''
-alloyXMLFile= os.path.abspath("C:\\Users\\grist\\eclipse-workspace\\SampleV2-MultiRobot-Task-Allocation\\system_0\\models\\alloy_example_output.xml")
+alloyXMLFile= os.path.abspath("C:\\Users\\grist\\eclipse-workspace\\Sample-Multi-Robot-Alloy\\src\\models\\alloy_example_output.xml")
 alloyTree = ET.parse(alloyXMLFile)
 alloyRoot = alloyTree.getroot()
 alloyChildren = alloyRoot.getchildren()
