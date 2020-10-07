@@ -1,0 +1,160 @@
+<alloy builddate="2015-02-22 18:21 EST">
+
+<instance bitwidth="0" maxseq="0" command="Run TaskAllocation for exactly 2 Location, 7 Capability, exactly 4 Robot, exactly 5 Task, exactly 3 CompositeTask" filename="">
+
+<sig label="seq/Int" ID="0" parentID="1" builtin="yes">
+</sig>
+
+<sig label="Int" ID="1" parentID="2" builtin="yes">
+</sig>
+
+<sig label="String" ID="3" parentID="2" builtin="yes">
+</sig>
+
+<sig label="this/CleanerRobot" ID="4" parentID="5" some="yes">
+   <atom label="CleanerRobot$0"/>
+</sig>
+
+<sig label="this/MedRobot" ID="6" parentID="5" some="yes">
+   <atom label="MedRobot$0"/>
+</sig>
+
+<sig label="this/MoveRobot" ID="7" parentID="5" some="yes">
+   <atom label="MoveRobot$0"/>
+   <atom label="MoveRobot$1"/>
+</sig>
+
+<sig label="this/Robot" ID="5" parentID="2" abstract="yes" some="yes">
+</sig>
+
+<field label="contributes" ID="8" parentID="5">
+   <tuple> <atom label="MedRobot$0"/> <atom label="MeasuringTemp$0"/> </tuple>
+   <tuple> <atom label="MedRobot$0"/> <atom label="MeasuringPressure$0"/> </tuple>
+   <tuple> <atom label="MoveRobot$0"/> <atom label="MovingFurniture$1"/> </tuple>
+   <tuple> <atom label="CleanerRobot$0"/> <atom label="Cleaning$0"/> </tuple>
+   <tuple> <atom label="CleanerRobot$0"/> <atom label="Cleaning$1"/> </tuple>
+   <tuple> <atom label="MoveRobot$1"/> <atom label="MovingFurniture$0"/> </tuple>
+   <types> <type ID="5"/> <type ID="9"/> </types>
+</field>
+
+<sig label="this/Cleaning" ID="10" parentID="9" some="yes">
+   <atom label="Cleaning$0"/>
+   <atom label="Cleaning$1"/>
+</sig>
+
+<sig label="this/MeasuringTemp" ID="11" parentID="9" some="yes">
+   <atom label="MeasuringTemp$0"/>
+</sig>
+
+<sig label="this/MeasuringPressure" ID="12" parentID="9" some="yes">
+   <atom label="MeasuringPressure$0"/>
+</sig>
+
+<sig label="this/MovingFurniture" ID="13" parentID="9" some="yes">
+   <atom label="MovingFurniture$0"/>
+   <atom label="MovingFurniture$1"/>
+</sig>
+
+<sig label="this/Capability" ID="9" parentID="2" abstract="yes" some="yes">
+</sig>
+
+<field label="canrun" ID="14" parentID="9">
+   <tuple> <atom label="MovingFurniture$0"/> <atom label="MOVEF$0"/> </tuple>
+   <tuple> <atom label="MovingFurniture$1"/> <atom label="MOVEF$1"/> </tuple>
+   <tuple> <atom label="MeasuringTemp$0"/> <atom label="TEMP$0"/> </tuple>
+   <tuple> <atom label="MeasuringPressure$0"/> <atom label="PRESSURE$0"/> </tuple>
+   <tuple> <atom label="Cleaning$0"/> <atom label="CLEAN$0"/> </tuple>
+   <tuple> <atom label="Cleaning$1"/> <atom label="CLEAN$0"/> </tuple>
+   <types> <type ID="9"/> <type ID="15"/> </types>
+</field>
+
+<field label="belongsto" ID="16" parentID="9">
+   <tuple> <atom label="MovingFurniture$0"/> <atom label="MoveRobot$1"/> </tuple>
+   <tuple> <atom label="MovingFurniture$1"/> <atom label="MoveRobot$0"/> </tuple>
+   <tuple> <atom label="MeasuringTemp$0"/> <atom label="MedRobot$0"/> </tuple>
+   <tuple> <atom label="MeasuringPressure$0"/> <atom label="MedRobot$0"/> </tuple>
+   <tuple> <atom label="Cleaning$0"/> <atom label="CleanerRobot$0"/> </tuple>
+   <tuple> <atom label="Cleaning$1"/> <atom label="CleanerRobot$0"/> </tuple>
+   <types> <type ID="9"/> <type ID="5"/> </types>
+</field>
+
+<sig label="this/RoomA" ID="17" parentID="18" one="yes">
+   <atom label="RoomA$0"/>
+</sig>
+
+<sig label="this/RoomB" ID="19" parentID="18" one="yes">
+   <atom label="RoomB$0"/>
+</sig>
+
+<sig label="this/Location" ID="18" parentID="2" abstract="yes" some="yes">
+</sig>
+
+<sig label="this/TEMP" ID="20" parentID="15" some="yes">
+   <atom label="TEMP$0"/>
+</sig>
+
+<sig label="this/PRESSURE" ID="21" parentID="15" some="yes">
+   <atom label="PRESSURE$0"/>
+</sig>
+
+<sig label="this/CLEAN" ID="22" parentID="15" some="yes">
+   <atom label="CLEAN$0"/>
+</sig>
+
+<sig label="this/MOVEF" ID="23" parentID="15" some="yes">
+   <atom label="MOVEF$0"/>
+   <atom label="MOVEF$1"/>
+</sig>
+
+<sig label="this/Task" ID="15" parentID="2" abstract="yes" some="yes">
+</sig>
+
+<field label="runby" ID="24" parentID="15">
+   <tuple> <atom label="TEMP$0"/> <atom label="MeasuringTemp$0"/> </tuple>
+   <tuple> <atom label="MOVEF$0"/> <atom label="MovingFurniture$0"/> </tuple>
+   <tuple> <atom label="MOVEF$1"/> <atom label="MovingFurniture$1"/> </tuple>
+   <tuple> <atom label="CLEAN$0"/> <atom label="Cleaning$1"/> </tuple>
+   <tuple> <atom label="PRESSURE$0"/> <atom label="MeasuringPressure$0"/> </tuple>
+   <types> <type ID="15"/> <type ID="9"/> </types>
+</field>
+
+<sig label="this/moveFurnitureGoal" ID="25" parentID="26" some="yes">
+   <atom label="moveFurnitureGoal$0"/>
+</sig>
+
+<sig label="this/JointCompositeTask" ID="26" parentID="27" abstract="yes">
+</sig>
+
+<sig label="this/vitalParamGoal" ID="28" parentID="27" some="yes">
+   <atom label="vitalParamGoal$0"/>
+</sig>
+
+<sig label="this/cleanRoom" ID="29" parentID="27" some="yes">
+   <atom label="cleanRoom$0"/>
+</sig>
+
+<sig label="this/CompositeTask" ID="27" parentID="2" abstract="yes" some="yes">
+</sig>
+
+<field label="tasks" ID="30" parentID="27">
+   <tuple> <atom label="cleanRoom$0"/> <atom label="CLEAN$0"/> </tuple>
+   <tuple> <atom label="moveFurnitureGoal$0"/> <atom label="MOVEF$0"/> </tuple>
+   <tuple> <atom label="moveFurnitureGoal$0"/> <atom label="MOVEF$1"/> </tuple>
+   <tuple> <atom label="vitalParamGoal$0"/> <atom label="TEMP$0"/> </tuple>
+   <tuple> <atom label="vitalParamGoal$0"/> <atom label="PRESSURE$0"/> </tuple>
+   <types> <type ID="27"/> <type ID="15"/> </types>
+</field>
+
+<field label="location" ID="31" parentID="27">
+   <tuple> <atom label="cleanRoom$0"/> <atom label="RoomA$0"/> </tuple>
+   <tuple> <atom label="moveFurnitureGoal$0"/> <atom label="RoomA$0"/> </tuple>
+   <tuple> <atom label="vitalParamGoal$0"/> <atom label="RoomB$0"/> </tuple>
+   <types> <type ID="27"/> <type ID="18"/> </types>
+</field>
+
+<sig label="univ" ID="2" builtin="yes">
+</sig>
+
+</instance>
+
+</alloy>
