@@ -1,0 +1,49 @@
+#	Task = [ID, name, capability]
+
+Task = ["t1", "TEMP", "MeasuringTemp"]
+Task = ["t2", "BLOOD_PRESSURE", "MeasuringPressure"]
+Task = ["t3", "CLEANING", "Cleaning"]
+Task = ["t4", "MOVING", "MovingFurniture"]
+
+#	Capability = [ID, name, task.ID]
+
+Capability = ["c1", "Cleaning", "t3"]
+Capability = ["c2", "MeasuringTemp", "t1"]
+Capability = ["c3", "MeasuringPressure", "t2"]
+Capability = ["c4", "MovingFurniture", "t4"]
+
+#	CompositeTask = [ID,name,{task.ID, task.ID ...}]
+
+CompositeTask = ["ct_1 ", "vitalParamGoal", "{t1,t2} "]
+CompositeTask = ["ct_2 ", "cleanRoom", "{t3}"]
+
+#	JoinCompositeTask = [ID,name,{},{task.ID, ...},{?r ...}, ""exactly" or "at_least""] ####Only working for a single task.ID so far
+
+JoinCompositeTask = ["ct_3", "moveObject", "{t4}", "{?r ?r}", "exactly"]
+
+#	Location = [ID,name]
+
+Location = ["l_A", "RoomA"]
+Location = ["l_B", "RoomB"]
+Location = ["l_C", "RoomC"]
+Location = ["l_D", "RoomD"]
+Location = ["l_E", "RoomE"]
+
+
+#	Robot =[ID,name,{capability.ID,...}]
+
+Robot = ["r1", "CleanerRobot", "{c1}"]
+Robot = ["r2", "MedRobot", "{c2,c3}"]
+Robot = ["r3", "MoveRobot", "{c4}"]
+
+
+#	Allocate = [ID,compositeTask.ID,location.ID]
+
+Allocate = ["a_1","ct_1","l_B"]
+#Allocate = ["a_2","ct_2","l_A"]
+Allocate = ["a_4","ct_3","l_A"]
+
+
+#	Plan = [name]
+
+Plan = ["plan_1"]
