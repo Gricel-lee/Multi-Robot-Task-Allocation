@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<robots>
+   <!--Robots database-->
+   <robot>
+      <name name="MedRobot$0"/>
+      <initPos name="c1"/>
+      <capability name="MeasuringTemp$0">
+         <task name="TEMP$0">
+            <compositeTask name="vitalParamGoal$0">
+               <location name="RoomB$0"/>
+               <location name="RoomB$0"/>
+            </compositeTask>
+         </task>
+      </capability>
+   </robot>
+   <robot>
+      <name name="MedRobot$1"/>
+      <initPos name="c2"/>
+      <capability name="MeasuringPressure$0">
+         <task name="BLOOD_PRESSURE$0">
+            <compositeTask name="vitalParamGoal$0"/>
+         </task>
+      </capability>
+   </robot>
+   <robot>
+      <name name="CleanerRobot$0"/>
+      <initPos name="c3"/>
+      <capability name="Cleaning$2"/>
+   </robot>
+   <robot>
+      <name name="CleanerRobot$1"/>
+      <initPos name="c4"/>
+      <capability name="Cleaning$0">
+         <task name="CLEAN$4">
+            <compositeTask name="cleanRoom$3">
+               <location name="RoomC$0"/>
+            </compositeTask>
+         </task>
+      </capability>
+      <capability name="Cleaning$1">
+         <task name="CLEAN$1">
+            <compositeTask name="cleanRoom$2">
+               <location name="RoomD$0"/>
+            </compositeTask>
+         </task>
+         <task name="CLEAN$2">
+            <compositeTask name="cleanRoom$0">
+               <location name="RoomB$0"/>
+            </compositeTask>
+         </task>
+         <task name="CLEAN$3">
+            <compositeTask name="cleanRoom$1">
+               <location name="RoomA$0"/>
+            </compositeTask>
+         </task>
+      </capability>
+      <capability name="Cleaning$3">
+         <task name="CLEAN$0">
+            <compositeTask name="cleanRoom$4">
+               <location name="RoomE$0"/>
+            </compositeTask>
+         </task>
+      </capability>
+   </robot>
+</robots>
