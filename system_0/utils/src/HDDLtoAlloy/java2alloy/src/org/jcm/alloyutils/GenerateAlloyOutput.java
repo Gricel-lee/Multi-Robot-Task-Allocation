@@ -28,10 +28,20 @@ public class GenerateAlloyOutput {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-		String modelFile =  "models/model.als"; // INPUT FILE
-
-		m_ac.setMaxSolutions(10);  // MAXIMUM NUMBER OF SOLUTIONS (COMMENT TO GENERATE ALL SOLUTIONS)
+		
+		if (args.length<3) {
+			System.out.println("Usage: GenerateAlloyOutput [input file] [export path] [max solutions]");
+			System.exit(0);
+		}
+		
+		//String modelFile =  "models/model.als";
+		String modelFile = args[0];  // INPUT FILE
+		String exportPath = args[1];
+		int maxSols = Integer.parseInt(args[2]); // MAXIMUM NUMBER OF SOLUTIONS
+		
+		
+		
+		m_ac.setMaxSolutions(maxSols);  
 		m_ac.generateSolutions(modelFile);
 		
 		for (int i=0; i<m_ac.getSolutions().size();i++){
@@ -45,7 +55,8 @@ public class GenerateAlloyOutput {
 				System.out.println("\n\n\n SOLUTION "+String.valueOf(i)+" ----------------------\n\n\n" + m_structures.get(strSolId));
 		}
 		
-		exportConfigurations("models/ALLOY"); // PATH FOR OUTPUT FILES
+		//exportConfigurations("models/ALLOY"); // PATH FOR OUTPUT FILES
+		exportConfigurations(exportPath); // PATH FOR OUTPUT FILES
 		
 		
 	}

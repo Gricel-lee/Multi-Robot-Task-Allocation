@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# Startup script for Alloy Generation (Mac OS X)
+
+# home directory
+HOME_DIR="/Users/javiercamaramoreno/Dropbox/Documents/Work/Projects/MRTA-ICSE-NIER/system_0" # Replace by system_0 root directory
+HOME_LIB_DIR="$HOME_DIR"/models
+GA_JAR="$HOME_DIR"/utils/utilsFunctions/GenerateAlloy.jar
+
+
+# Command to launch Java
+if [ "$HOME_JAVA" = "" ]; then
+	if [ -x /usr/libexec/java_home ]; then
+		HOME_JAVA=`/usr/libexec/java_home`"/bin/java"
+	else
+		HOME_JAVA=java
+	fi
+fi
+
+# Set up CLASSPATH
+HOME_CLASSPATH="$GA_JAR":"$HOME_LIB_DIR"
+
+
+GA_JAVAMAXMEM="-Xmx10g"
+GA_JAVASTACKSIZE="-Xss4M"
+
+# Run through Java
+"$HOME_JAVA" $GA_JAVAMAXMEM $GA_JAVASTACKSIZE -classpath "$HOME_LIB_DIR" -jar $GA_JAR "$@"
+
+GA_EXIT_CODE=$?
+exit $GA_EXIT_CODE
