@@ -24,7 +24,6 @@ The assignation of the cell is related to the physical world (image of the hospi
     </location>
     <location>
             <grid cell="c5"/>
-	    <alloy name="RoomA"/>
     </location>
     <location>
             <grid cell="c6"/>
@@ -34,11 +33,9 @@ The assignation of the cell is related to the physical world (image of the hospi
     </location>
     <location>
             <grid cell="c8"/>
-	    <alloy name="RoomE"/>
     </location>
     <location>
             <grid cell="c9"/>
-	    <alloy name="RoomB"/>
     </location>
     <location>
             <grid cell="c10"/>
@@ -51,7 +48,6 @@ The assignation of the cell is related to the physical world (image of the hospi
     </location>
     <location>
             <grid cell="c13"/>
-	    <alloy name="RoomC"/>
     </location>
     <location>
             <grid cell="c14"/>
@@ -64,7 +60,6 @@ The assignation of the cell is related to the physical world (image of the hospi
     </location>
     <location>
             <grid cell="c17"/>
-	    <alloy name="RoomD"/>
     </location>
     <location>
             <grid cell="c18"/>
