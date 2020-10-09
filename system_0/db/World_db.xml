@@ -1,17 +1,6 @@
 <!--COMMENT:
 This info is taken from the DSL
 The assignation of the cell is related to the physical world (image of the hospital in this case)
-alloy_to_cell_reference:
-	<alloy name="RoomA"/>	cell5
-	<taskToDo name="vitalParamGoal">
-	<alloy name="RoomB"/>	cell9
-	<taskToDo name="cleanRoom">	
-	<alloy name="RoomC"/>	cell13
-	<taskToDo name="cleanRoom">
-	<alloy name="RoomD"/>	cell17
-	<taskToDo name="cleanRoom">
-	<alloy name="RoomE"/>	cell8
-	<taskToDo name="moveObject">
 -->
 
 <locations_db>
