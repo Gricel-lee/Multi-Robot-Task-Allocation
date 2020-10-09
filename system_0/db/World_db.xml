@@ -36,8 +36,6 @@ alloy_to_cell_reference:
     <location>
             <grid cell="c5"/>
 	    <alloy name="RoomA"/>
-	    <taskToDo name="vitalParamGoal"/>
-
     </location>
     <location>
             <grid cell="c6"/>
@@ -48,12 +46,10 @@ alloy_to_cell_reference:
     <location>
             <grid cell="c8"/>
 	    <alloy name="RoomE"/>
-	    <taskToDo name="moveObject">
     </location>
     <location>
             <grid cell="c9"/>
 	    <alloy name="RoomB"/>
-	    <taskToDo name="cleanRoom"/>
     </location>
     <location>
             <grid cell="c10"/>
@@ -67,7 +63,6 @@ alloy_to_cell_reference:
     <location>
             <grid cell="c13"/>
 	    <alloy name="RoomC"/>
-	    <taskToDo name="cleanRoom">
     </location>
     <location>
             <grid cell="c14"/>
@@ -81,7 +76,6 @@ alloy_to_cell_reference:
     <location>
             <grid cell="c17"/>
 	    <alloy name="RoomD"/>
-	    <taskToDo name="cleanRoom">
     </location>
     <location>
             <grid cell="c18"/>
