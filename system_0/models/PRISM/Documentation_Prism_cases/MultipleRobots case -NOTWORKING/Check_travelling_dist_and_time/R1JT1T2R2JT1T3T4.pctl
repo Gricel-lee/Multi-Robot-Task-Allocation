@@ -1,0 +1,1 @@
+R{"r1travelling"}min=? [ (F r1location=1) & (F r1location=2) & (F r1location=3) {"init"}]

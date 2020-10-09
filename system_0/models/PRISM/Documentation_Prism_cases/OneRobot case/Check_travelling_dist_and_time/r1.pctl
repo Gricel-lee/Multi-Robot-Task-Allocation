@@ -1,0 +1,3 @@
+R{"travelling"}min=? [  (F location=3) & (F location=2) & (F location=1) {"init"}]  
+
+R{"time"}min=? [  (F location=3) & (F location=2) & (F location=1) {"init"}]  
