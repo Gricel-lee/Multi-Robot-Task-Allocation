@@ -9,8 +9,8 @@ const double dist_T1_T2=20.0; // Distance from location where t2 takes place;
 
 const double average_vel_r1=1.2;// m/s
 
-const double task1_time = 60;
-const double task2_time = 30;
+const double T1_time = 60;
+const double T2_time = 30;
 
 mdp
 
@@ -32,10 +32,10 @@ endrewards
 
 
 rewards "time"
-	[T1] (location=0) : dist_init_T1 * 1/average_vel_r1 + task1_time; // travelling time from T0 to T1, plus time to do T1
-	[T2] (location=0) : dist_init_T2 * 1/average_vel_r1+ task2_time;  // when action T2 is taken from location=0, add 3
-	[T2] (location=1) : dist_T1_T2 * 1/average_vel_r1+ task2_time; 
-	[T1] (location=2) : dist_T1_T2 * 1/average_vel_r1+ task1_time; 
+	[T1] (location=0) : dist_init_T1 * 1/average_vel_r1 + T1_time; // travelling time from T0 to T1, plus time to do T1
+	[T2] (location=0) : dist_init_T2 * 1/average_vel_r1+ T2_time;  // when action T2 is taken from location=0, add 3
+	[T2] (location=1) : dist_T1_T2 * 1/average_vel_r1+ T2_time; 
+	[T1] (location=2) : dist_T1_T2 * 1/average_vel_r1+ T1_time; 
 endrewards
 
 
