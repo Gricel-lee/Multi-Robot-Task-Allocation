@@ -1,14 +1,19 @@
-
+<?xml version="1.0" ?>
 <robots>
-	
-  <!--Two data capture in this xml: "robottype", and "ROBOTS" -->
-  <!--All id's should be unique-->
-  <!-- Robottype:
-     a) type: unique, single work, descripbing the type of robot
-     b) capability: all capabilities required for the specific robot
-     c) sensors and actuators: add another level of granularity, if one is in failure (fail), the capability status is changed to "fail". Their status can take the value of: {ok,fail,working percentage} specified in each robot
-     They can be repeated between different robottype and between capabilities of the same robottype.
-     d) 
+  	<time t="00:00:00" />
+  	<!--Two data capture in this xml: "robottype", and "ROBOTS" -->
+  	<!--All id's should be unique-->
+  	<!-- Robottype:
+     		a) description type: unique, single word, descripbing the type of robot
+     		b) capability: all capabilities required for the specific robot
+     		c) sensors and actuators: add another level of granularity, if one is in failure (fail), the capability status is changed to "fail". Their status can take the value of: {ok,fail,working percentage} specified in each robot
+     		They can be repeated between different robottype and between capabilities of the same robottype.
+  	-->
+  	<!-- Robot:
+	     a) description id: unique, single word, id
+	     b) robottype type: must coincide to a single "robottype" in this database
+	     c) capability, sensors and actuators: associated to "Robottype". See Robottype
+	  -->
      efficiency: 
   
 	<robottype>
@@ -26,12 +31,13 @@
 
 	<robot>
 		<description id="r1"/>
-		<robottype type="CleanerRobot"
-    <capability id="c1" initstatus="ok" status="fail" energycost="23.05J" time="40min"/>
-    <capability id="c2" initstatus="90%" status="89%" energycost="43.00J" time="42min"/>
-    <sensor name="dust" initstatus="ok" status="ok"/>
-		<actuator name="mop_arm" initstatus="ok" status="fail"/>
-    <actuator name="vacuum" initstatus="90%" status="89%"/>
+		<robottype type="CleanerRobot">
+			<capability id="c1" initstatus="ok" status="fail" energycost="23.05J" time="40min"/>
+			<capability id="c2" initstatus="90%" status="89%" energycost="43.00J" time="42min"/>
+			<sensor name="dust" initstatus="ok" status="ok"/>
+			<actuator name="mop_arm" initstatus="ok" status="fail"/>
+			<actuator name="vacuum" initstatus="90%" status="89%"/>
+		</robottype>
 		<description probability_success="0.90" task="task1"/>
 		<description probability_success="0.95" task="task2"/>
 		<description status = "available" />
