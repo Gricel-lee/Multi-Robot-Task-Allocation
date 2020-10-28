@@ -1,0 +1,43 @@
+<worldmodel>
+	<model1>
+		<description name="hospital"/>
+		<time t="00:00:00" />
+		<dimensions x="(0,40)" y="(0,60)" />
+		<robotpos id="r1" initx="5" inity="5" x="5" y="5" />
+		<robotpos id="r2" initx="15" inity="5" x="15" y="5" />
+		<robotpos id="r3" initx="25" inity="5" x="25" y="5" />
+		<robotpos id="r4" initx="35" inity="5" x="35" y="5" />
+		<door name="doorC5" x="(5,5)" y="(10,20)" initstatus = "lock" status = "lock"/>
+		<door name="doorC9" x="(5,5)" y="(20,30)" initstatus = "open" status = "open"/>
+		<door name="doorC13" x="(5,5)" y="(30,40)" initstatus = "open" status = "open"/>
+		<door name="doorC17" x="(5,5)" y="(40,50)" initstatus = "open" status = "open"/>
+		<obstacle x="(0,41)" y="(0,0)" />
+		<obstacle x="(0,41)" y="(61,61)" />
+		<obstacle x="(40,40)" y="(0,61)" />
+		<obstacle x="(0,10)" y="(10,10)" />
+		<obstacle x="(0,10)" y="(20,20)" />
+		<obstacle x="(0,10)" y="(30,30)" />
+		<obstacle x="(0,10)" y="(40,40)" />
+		<obstacle x="(0,10)" y="(50,50)" />
+		<obstacle x="(29,40)" y="(10,10)" />
+		<obstacle x="(29,40)" y="(30,30)" />
+		<obstacle x="(29,40)" y="(50,50)" />
+		<location type=point name="DockStation_r1" x="5" y="5"/>
+		<location type=point name="DockStation_r2" x="15" y="5"/>
+		<location type=point name="DockStation_r3" x="25" y="5"/>
+		<location type=point name="DockStation_r4" x="35" y="5"/>
+		<location type=room name="RobotStorage" x="(1,40)" y="(1,9)" initstatus = "clean" status = "clean"/>
+		<location type=room name="RoomA" x="(1,9)" y="(11,19)" initstatus = "clean" status = "clean"/>
+		<location type=room name="RoomB" x="(1,9)" y="(21,29)" initstatus = "clean" status = "clean"/>
+		<location type=room name="RoomC" x="(1,9)" y="(31,39)" initstatus = "clean" status = "clean"/>
+		<location type=room name="RoomD" x="(1,9)" y="(41,49)" initstatus = "clean" status = "clean"/>
+		<location type=room name="RoomE" x="(26,39)" y="(11,29)" initstatus = "clean" status = "clean"/>
+		<location type=room name="RoomF" x="(26,39)" y="(31,49)" initstatus = "clean" status = "clean"/>
+		<location type=room name="RoomG" x="(1,40)" y="(51,59)" initstatus = "clean" status = "clean"/>
+		<patient location="RoomA" initcondition="contagious" condition="contagious"/>
+		<patient location="RoomB" initcondition="contagious" condition="noncritical">
+		<patient location="RoomC" initcondition="contagious" condition="critical">
+		<object name="operationTable" initx="(28,32)" inity="(18,22)" x="(28,32)" y="(18,22)" />
+		<object name="bed" initx="(28,32)" inity="(38,42)" x="(28,32)" y="(38,42)" />
+	</model1>
+</worldmodel>
