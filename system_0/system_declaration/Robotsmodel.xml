@@ -19,11 +19,11 @@
 	<robottype>
 		<description type="CleanerRobot"/>
 		<description diameter="0.8m" />
-		<capability id="c1" description="cleanFloor" canrun="task1" initstatus=? status=? />
+		<capability id="c1" description="cleanFloor" canruntask="task1" initstatus=? status=? />
 			<sensor name="dust" initstatus=? status=?/>
 			<actuator name="mop_arm" initstatus=? status=?/>
 		</capability>
-		<capability id="c2" description="cleanFurniture" canrun="task2" initstatus=? status=?/>
+		<capability id="c2" description="cleanFurniture" canruntask="task2" initstatus=? status=?/>
 			<sensor name="dust" initstatus=? status=?/>
 			<actuator name="vacuum" initstatus=? status=?/>
 		</capability>	
@@ -34,12 +34,13 @@
 		<robottype type="CleanerRobot">
 			<capability id="c1" initstatus="ok" status="fail" energycost="23.05J" time="40min"/>
 			<capability id="c2" initstatus="90%" status="89%" energycost="43.00J" time="42min"/>
+			<task canruntask="task1" probability_success="0.90"/>
+			<task canruntask="task2" probability_success="0.95"/>
 			<sensor name="dust" initstatus="ok" status="ok"/>
 			<actuator name="mop_arm" initstatus="ok" status="fail"/>
 			<actuator name="vacuum" initstatus="90%" status="89%"/>
 		</robottype>
-		<description probability_success="0.90" task="task1"/>
-		<description probability_success="0.95" task="task2"/>
+		
 		<description status = "available" />
 		<description efficiency = "99%"/>
 	</robot>
